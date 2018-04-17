@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get 'home/index'
+
+  get '/bemvindo' => 'home#index'
 
   resources :phones
-  resources :addresses
-  resources :contacts
-  resources :kinds
+  resources :addresses #, only: [:new, :show]
+  resources :contacts #, except: [:edit]
+  resources :kinds # cria 8 rotas de forma automatica
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
