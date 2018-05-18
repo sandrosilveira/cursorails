@@ -5,7 +5,6 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.all
-    @meu_nome = "Sandro Silveira"
   end
 
   # GET /contacts/1
@@ -17,7 +16,6 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     @contact.build_address
-
     options_for_select
   end
 
